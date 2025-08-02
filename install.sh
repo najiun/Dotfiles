@@ -84,6 +84,10 @@ sudo ufw allow 21 #FTP
 sudo ufw allow 25 #Email
 sudo ufw allow 53 #DNS
 
+#hblock
+sudo curl https://raw.githubusercontent.com/najiun/Dotfiles/refs/heads/main/my-sources.list -o /home/nazo/my-sources.list
+sudo hblock
+sudo hblock --sources /home/nazo/my-sources.list
 
 #Timeshift
 sudo timeshift --create --comments "Post-Installation Of system" --tags O
