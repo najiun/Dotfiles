@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+set -euxo pipefail
 
 sudo apt update
 sudo apt upgrade
