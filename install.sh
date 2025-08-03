@@ -1,6 +1,5 @@
 #!/bin/bash
 
-set -e
 set -euxo pipefail
 LOGFILE=/tmp/install-debug.log
 exec > >(tee "$LOGFILE") 2>&1
@@ -17,8 +16,8 @@ for package in "${packages[@]}"; do
 	
 done
 
-mkdir -p $HOME/Applications/Bitwarden 
-mkdir -p $HOME/Applications/Obsidian
+mkdir -p /home/user/Applications/Bitwarden 
+mkdir -p /home/user/Applications/Obsidian
 
 #Brave Browser installation
 
