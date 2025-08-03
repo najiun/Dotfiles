@@ -16,10 +16,11 @@ for package in "${packages[@]}"; do
 	sudo apt install -y "$package"
 	
 done
+echo "19"
 
 mkdir -p /home/user/Applications/Bitwarden 
 mkdir -p /home/user/Applications/Obsidian
-
+echo "23"
 #Brave Browser installation
 
 sudo apt install curl
@@ -31,7 +32,7 @@ sudo curl -fsSLo /etc/apt/sources.list.d/brave-browser-release.sources https://b
 sudo apt update
 
 sudo apt install brave-browser
-
+echo "35"
 #Bitwarden installation
 
 curl https://bitwarden.com/download/?app=desktop&platform=linux&variant=appimage -o /home/user/Applications/Bitwarden/bitwarden.Appimage
@@ -48,7 +49,7 @@ EOF
 
 sudo update-desktop-database
 
-
+echo "52"
 #Obsidian installation
 sudo curl https://github.com/obsidianmd/obsidian-releases/releases/download/v1.8.10/Obsidian-1.8.10.AppImage -o /home/user/Applications/Obsidian/obsidian.Appimage
 chmod 755 "$HOME/Applications/Obsidian/obsidian.Appimage"
