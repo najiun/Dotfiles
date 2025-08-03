@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -e
 set -euxo pipefail
 LOGFILE=/tmp/install-debug.log
 exec > >(tee "$LOGFILE") 2>&1
@@ -8,7 +9,7 @@ sudo apt update
 sudo apt upgrade
 
 #Installing system packages
-packages=("i3" "lightdm" "feh" "picom" "dmenu" "ranger" "dunst" "vim" "syncthing" "ufw" "timeshift" "smartmontools" "focuswriter" "tlp" "polybar" "nmtui" "nmcli" "touch" "kitty" )
+packages=("i3" "lightdm" "feh" "picom" "dmenu" "ranger" "dunst" "vim" "syncthing" "ufw" "timeshift" "smartmontools" "focuswriter" "tlp" "polybar" "network-manager"  "touch" "kitty" )
 
 for package in "${packages[@]}"; do
 
