@@ -9,7 +9,7 @@ sudo apt update
 sudo apt upgrade
 
 #Installing system packages
-packages=("i3" "lightdm" "feh" "picom" "dmenu" "ranger" "dunst" "vim" "syncthing" "ufw" "timeshift" "smartmontools" "focuswriter" "tlp" "polybar" "network-manager"  "touch" "kitty" )
+packages=("i3" "lightdm" "feh" "picom" "dmenu" "ranger" "dunst" "vim" "syncthing" "ufw" "timeshift" "smartmontools" "focuswriter" "tlp" "polybar" "network-manager" "kitty" )
 
 for package in "${packages[@]}"; do
 
