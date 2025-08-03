@@ -34,10 +34,10 @@ sudo apt update
 sudo apt install brave-browser
 echo "35"
 #Bitwarden installation
-curl -o /home/user/Applications/Bitwarden/bitwarden.deb -L https://bitwarden.com/download/?app=desktop&platform=linux&variant=deb
+curl -L -o /home/user/Applications/Bitwarden/bitwarden.deb https://bitwarden.com/download/?app=desktop&platform=linux&variant=deb
 sudo apt install /home/user/Applications/Bitwarden/bitwarden.deb
 #Obsidian installation
-curl -o /home/user/Applications/Obsidian/obsidian.deb -L https://github.com/obsidianmd/obsidian-releases/releases/download/v1.8.10/obsidian_1.8.10_amd64.deb
+curl -L -o /home/user/Applications/Obsidian/obsidian.deb https://github.com/obsidianmd/obsidian-releases/releases/download/v1.8.10/obsidian_1.8.10_amd64.deb
 sudo apt install /home/user/Applications/Obsidian/obsidian.deb
 
 #hBlock installion(set-up after system config)
