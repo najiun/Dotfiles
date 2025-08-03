@@ -34,45 +34,19 @@ sudo apt update
 sudo apt install brave-browser
 echo "35"
 #Bitwarden installation
+curl -L https://bitwarden.com/download/?app=desktop&platform=linux&variant=deb -o /home/user/Applications/Bitwarden/bitwarden.deb
+sudo apt install /home/user/Applications/Bitwarden/bitwarden.deb
 
-curl https://bitwarden.com/download/?app=desktop&platform=linux&variant=appimage -o /home/user/Applications/Bitwarden/bitwarden.Appimage
-chmod 755 "$HOME/Applications/Bitwarden/bitwarden.Appimage"
-sudo curl blob:https://github.com/4982141e-3f78-4694-97e0-464dcfea6612 -o /home/user/Applications/Bitwarden/logo.png
-touch /home/user/.local/share/applications/bitwarden.desktop
-cat > /home/user/.local/share/applications/bitwarden.desktop << EOF
-[Desktop Entry]
-Name:Bitwarden
-Exec:/home/user/Applications/Bitwarden/bitwarden.Appimage
-Icon:/home/user/Applications/Bitwarden/logo.png
-Type:Application
-EOF
-
-sudo update-desktop-database
-
-echo "52"
 #Obsidian installation
-sudo curl https://github.com/obsidianmd/obsidian-releases/releases/download/v1.8.10/Obsidian-1.8.10.AppImage -o /home/user/Applications/Obsidian/obsidian.Appimage
-chmod 755 "$HOME/Applications/Obsidian/obsidian.Appimage"
-sudo curl https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/2023_Obsidian_logo.svg/250px-2023_Obsidian_logo.svg.png -o /home/user/Applications/Obsidian/logo.png
-touch /home/user/.local/share/applications/obsidian.desktop
-cat > /home/user/.local/share/applications/obsidian.desktop << EOF
-[Desktop Entry]
-Name:Obsidian
-Exec:/home/user/Applications/Obsidian/obsidian.Appimage
-Icon:/home/user/Applications/Obsidian/logo.png
-Type:Application
-EOF
-
-sudo update-desktop-database
-
+curl -o /home/user/Applications/Obsidian/obsidian.deb -L https://github.com/obsidianmd/obsidian-releases/releases/download/v1.8.10/obsidian_1.8.10_amd64.deb
+sudo apt install /home/user/Applications/Obsidian/obsidian.deb
 
 #hBlock installion(set-up after system config)
-curl -o /user/hblock 'https://raw.githubusercontent.com/hectorm/hblock/v3.5.1/hblock' \
-	  && echo 'd010cb9e0f3c644e9df3bfb387f42f7dbbffbbd481fb50c32683bbe71f994451  /user/hblock' | shasum -c \
-	    && sudo mv /user/hblock /usr/local/bin/hblock \
-	      && sudo chown 0:0 /usr/local/bin/hblock \
-	        && sudo chmod 755 /usr/local/bin/hblock
-
+curl -o /tmp/hblock 'https://raw.githubusercontent.com/hectorm/hblock/v3.5.1/hblock' \
+  && echo 'd010cb9e0f3c644e9df3bfb387f42f7dbbffbbd481fb50c32683bbe71f994451  /tmp/hblock' | shasum -c \
+  && sudo mv /tmp/hblock /usr/local/bin/hblock \
+  && sudo chown 0:0 /usr/local/bin/hblock \
+  && sudo chmod 755 /usr/local/bin/hblock
 
 #change computer name !!!!!
 
@@ -96,6 +70,7 @@ ufw enable
 sudo curl https://raw.githubusercontent.com/najiun/Dotfiles/refs/heads/main/my-sources.list -o /home/user/my-sources.list
 sudo hblock
 sudo hblock --sources /home/user/my-sources.list
+# add automatic source updates in the furture
 
 #Timeshift
 sudo timeshift --create --comments "Post-Installation Of system" --tags O
