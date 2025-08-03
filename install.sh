@@ -2,6 +2,8 @@
 
 set -e
 set -euxo pipefail
+LOGFILE=/tmp/install-debug.log
+exec > >(tee "$LOGFILE") 2>&1
 
 sudo apt update
 sudo apt upgrade
@@ -39,7 +41,7 @@ cat > /home/user/.local/share/applications/bitwarden.desktop << EOF
 [Desktop Entry]
 Name:Bitwarden
 Exec:/home/user/Applications/Bitwarden/bitwarden.Appimage
-Logo:/home/user/Applications/Bitwarden/logo.png
+Icon:/home/user/Applications/Bitwarden/logo.png
 Type:Application
 EOF
 
@@ -55,7 +57,7 @@ cat > /home/user/.local/share/applications/obsidian.desktop << EOF
 [Desktop Entry]
 Name:Obsidian
 Exec:/home/user/Applications/Obsidian/obsidian.Appimage
-Logo:/home/user/Applications/Obsidian/logo.png
+Icon:/home/user/Applications/Obsidian/logo.png
 Type:Application
 EOF
 
