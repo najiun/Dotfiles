@@ -17,7 +17,8 @@ for package in "${packages[@]}"; do
 	
 done
 
-mkdir -p "$HOME/Applications/Bitwarden" "$HOME/Applications/Obsidian"
+mkdir -p $HOME/Applications/Bitwarden 
+mkdir -p $HOME/Applications/Obsidian
 
 #Brave Browser installation
 
